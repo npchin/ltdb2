@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>Tracks</h1>
+</div>
+
+<p><%= link_to 'Add a New Track', new_track_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Track name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= track.track_name %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, track_url(track), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_track_url(track), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, track_url(track), method: 'delete', data: { confirm: "Do you really want to delete this track?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Editing Experience #<%= @experience.id %></h1>
+</div>
+
+<%= form_tag(experience_url(@experience), method: 'patch', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :hpde, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :hpde, @experience.hpde, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :open_track_day, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :open_track_day, @experience.open_track_day, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :time_trial, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :time_trial, @experience.time_trial, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :club, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :club, @experience.club, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :pro, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :pro, @experience.pro, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Update Experience", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

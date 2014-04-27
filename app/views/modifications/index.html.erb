@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>Modifications</h1>
+</div>
+
+<p><%= link_to 'Add a New Modification', new_modification_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Suspension</th>
+      <th>Chassis</th>
+      <th>Engine</th>
+      <th>Exhaust</th>
+      <th>Drivetrain</th>
+      <th>Brakes</th>
+      <th>Aesthetics</th>
+      <th>Aerodynamics</th>
+      <th>Tiles</th>
+      <th>Wheels</th>
+      <th>Data</th>
+      <th>Interior</th>
+      <th>Safety</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @modifications.each do |modification| %>
+      <tr>
+        <td><%= modification.suspension %></td>
+        <td><%= modification.chassis %></td>
+        <td><%= modification.engine %></td>
+        <td><%= modification.exhaust %></td>
+        <td><%= modification.drivetrain %></td>
+        <td><%= modification.brakes %></td>
+        <td><%= modification.aesthetics %></td>
+        <td><%= modification.aerodynamics %></td>
+        <td><%= modification.tiles %></td>
+        <td><%= modification.wheels %></td>
+        <td><%= modification.data %></td>
+        <td><%= modification.interior %></td>
+        <td><%= modification.safety %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, modification_url(modification), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_modification_url(modification), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, modification_url(modification), method: 'delete', data: { confirm: "Do you really want to delete this modification?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

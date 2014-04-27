@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>Experiences</h1>
+</div>
+
+<p><%= link_to 'Add a New Experience', new_experience_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Hpde</th>
+      <th>Open track day</th>
+      <th>Time trial</th>
+      <th>Club</th>
+      <th>Pro</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <td><%= experience.hpde %></td>
+        <td><%= experience.open_track_day %></td>
+        <td><%= experience.time_trial %></td>
+        <td><%= experience.club %></td>
+        <td><%= experience.pro %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, experience_url(experience), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_experience_url(experience), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, experience_url(experience), method: 'delete', data: { confirm: "Do you really want to delete this experience?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

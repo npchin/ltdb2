@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Laps</h1>
+</div>
+
+<p><%= link_to 'Add a New Lap', new_lap_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Modification</th>
+      <th>Lap date</th>
+      <th>Track</th>
+      <th>Lap time</th>
+      <th>Video link</th>
+      <th>Data file</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laps.each do |lap| %>
+      <tr>
+        <td><%= lap.user_id %></td>
+        <td><%= lap.modification_id %></td>
+        <td><%= lap.lap_date %></td>
+        <td><%= lap.track_id %></td>
+        <td><%= lap.lap_time %></td>
+        <td><%= lap.video_link %></td>
+        <td><%= lap.data_file %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, lap_url(lap), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_lap_url(lap), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, lap_url(lap), method: 'delete', data: { confirm: "Do you really want to delete this lap?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
