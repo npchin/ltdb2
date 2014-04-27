@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   # Routes for the Modification resource:
   # CREATE
   get '/modifications/new', controller: 'modifications', action: 'new', as: 'new_modification'
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
 
   # DELETE
   delete '/modifications/:id', controller: 'modifications', action: 'destroy'
+
+ root "posts#index"
+ 
   #------------------------------
 
   # Routes for the Car resource:
@@ -31,6 +36,7 @@ Rails.application.routes.draw do
 
   # DELETE
   delete '/cars/:id', controller: 'cars', action: 'destroy'
+
   #------------------------------
 
   # Routes for the Lap resource:
