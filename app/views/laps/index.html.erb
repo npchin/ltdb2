@@ -23,12 +23,14 @@
   <tbody>
     <% @laps.each do |lap| %>
       <tr>
-        <td><%= lap.user_id %></td>
+        <td><%= lap.user.screen_name %></td>
         <td><%= lap.modification_id %></td>
         <td><%= lap.lap_date %></td>
-        <td><%= lap.track_id %></td>
+        <td><%= lap.track.track_name %></td>
         <td><%= lap.lap_time %></td>
-        <td><%= lap.video_link %></td>
+
+        <!-- Added video link -->
+        <td><%= link_to("Video", "#{lap.video_link}")%></td>
         <td><%= lap.data_file %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, lap_url(lap), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_lap_url(lap), class: 'btn btn-warning' %></td>

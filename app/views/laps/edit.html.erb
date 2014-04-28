@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :user_id, @lap.user_id, class: 'form-control' %>
+      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :screen_name, @lap.user.full_name), class: 'form-control' %>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
   <div class="form-group">
     <%= label_tag :track_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :track_id, @lap.track_id, class: 'form-control' %>
+<%= select_tag :track_id, options_from_collection_for_select(Track.all, :id, :track_name, @lap.track.track_name), class: 'form-control' %>
     </div>
   </div>
 

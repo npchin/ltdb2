@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= label_tag :user_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :full_name, nil), class: 'form-control' %>
+      <%= select_tag :user_id, options_from_collection_for_select(User.all, :id, :screen_name, nil), class: 'form-control' %>
     </div>
   </div>
 

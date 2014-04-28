@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+has_many :cars
+
+has_many :laps
+
 #define full name
 
 	def full_name
