@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'chronic'
+
+gem 'chronic_duration'
+
 # add starter generators
 gem 'starter_generators'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

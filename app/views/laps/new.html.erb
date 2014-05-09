@@ -27,7 +27,7 @@
   <div class="form-group">
     <%= label_tag :track_id, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :track_id, nil, class: 'form-control' %>
+     <%= select_tag :track_id, options_from_collection_for_select(Track.all, :id, :track_name, nil), class: 'form-control' %>
     </div>
   </div>
 
@@ -48,7 +48,8 @@
   <div class="form-group">
     <%= label_tag :data_file, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :data_file, nil, class: 'form-control' %>
+
+      <%= file_field_tag :data_file %>
     </div>
   </div>
 

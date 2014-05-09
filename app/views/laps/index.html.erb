@@ -31,6 +31,8 @@
 
         <!-- Added video link -->
         <td><%= link_to("Video", "#{lap.video_link}")%></td>
+
+        <!-- Add data file download -->
         <td><%= lap.data_file %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, lap_url(lap), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_lap_url(lap), class: 'btn btn-warning' %></td>

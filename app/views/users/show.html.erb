@@ -10,12 +10,14 @@
   <dd><%= @user.last_name %></dd>
 
   <dt>Email</dt>
-  <dd><%= @user.email %></dd>
+  <dd><%= ChronicDuration::output(75, :format => :chrono)%></dd>
+
+  <!-- <dd><%= @user.email %></dd> -->
 
   <dt>Screen name</dt>
   <dd><%= @user.screen_name %></dd>
 
   <dt>Zip</dt>
-  <dd><%= @user.zip %></dd>
+  <dd><%= ChronicDuration::output(@user.zip , :format => :chrono)%></dd>
 
 </dl>

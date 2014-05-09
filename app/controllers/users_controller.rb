@@ -15,9 +15,19 @@ class UsersController < ApplicationController
     @user = User.new
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
-    @user.email = params[:email]
+    @user.email = ChronicDuration::parse(params[:email])
+
+    #@user.email = params[:email]
+
     @user.screen_name = params[:screen_name]
+    
+    
+
     @user.zip = params[:zip]
+
+    #@user.zip = ChronicDuration::parse(params[:zip])
+
+    #params[:zip]
 
     if @user.save
       redirect_to users_url, notice: "User created successfully."
